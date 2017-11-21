@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const path = require('path');
 
-const db = require('.models').db
+const db = require('../models').db
 
 const app = express();
 

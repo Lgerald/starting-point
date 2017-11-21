@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize')
-const db = new Sequelize('postgres://localhost:5432/')
+const db = new Sequelize('postgres://localhost:5432/tripplanner', {logging: false})
 
 
 const Place = db.define("place", {
@@ -16,10 +16,10 @@ const Place = db.define("place", {
         allowNull: false
     },
     phone: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING,
     },
     location: {
-        type: Sequelize.STRING,
+        type: Sequelize.ARRAY(Sequelize.INTEGER),
         allowNull: false
     }
 });
@@ -31,11 +31,11 @@ const Hotel = db.define("hotel", {
         allowNull: false
     }, 
     num_stars: {
-        type: Sequelize.FLOAT
+        type: Sequelize.INTEGER
     },
     ameneties: {
         type: Sequelize.ARRAY(Sequelize.STRING),
-        allowNull: false
+       
     }
 });
 
