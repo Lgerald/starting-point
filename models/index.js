@@ -31,10 +31,10 @@ const Hotel = db.define("hotel", {
         allowNull: false
     }, 
     num_stars: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER //insert max min
     },
-    ameneties: {
-        type: Sequelize.ARRAY(Sequelize.STRING),
+    ameneties: { //typo
+        type: Sequelize.STRING,
        
     }
 });
@@ -56,7 +56,7 @@ const Restaurant = db.define("restaurant", {
         allowNull: false
     },
     cuisine: {
-        type: Sequelize.ARRAY(Sequelize.STRING)
+        type: Sequelize.STRING,
     },
     price: {
         type: Sequelize.INTEGER,
