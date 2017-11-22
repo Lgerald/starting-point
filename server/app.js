@@ -5,6 +5,8 @@ const express = require('express');
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const path = require('path');
+const router = require("../api");
+
 
 const db = require('../models').db
 
@@ -14,6 +16,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "..", "public")));
+
+app.use(router);
 
 //failure to catch req above means 404, forward to error handler
 app.use(function(req, res, next) {
