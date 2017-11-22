@@ -15,3 +15,7 @@ const map = new mapboxgl.Map({
 
 const marker = buildMarker("activities", fullstackCoords);
 marker.addTo(map);
+
+fetch("/api")
+.then(resStream => resStream.json())
+.then(json => console.log(json.activities));
